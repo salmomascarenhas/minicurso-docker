@@ -1,0 +1,18 @@
+services:
+  app:
+    container_name: app-minicurso
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+
+  database:
+    container_name: database
+    image: postgres:13
+    environment:
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - 5432:5432

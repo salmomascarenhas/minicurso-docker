@@ -1,14 +1,9 @@
 FROM node:16
 
+USER node
 
 WORKDIR /app
 
 COPY . /app
 
-RUN npm install
-
-USER node
-
-EXPOSE 3000:3000
-
-RUN npm run start
+CMD [ "/app/start.sh" ]
